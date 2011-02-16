@@ -1,0 +1,21 @@
+<h1>Listing categories</h1>
+<!-- Link used for tree view is http://snippets.dzone.com/posts/show/1919-->
+<!-- Link used for tree view is https://github.com/collectiveidea/awesome_nested_set/wiki/Awesome-Nested-Set-Cheat-Sheet-->
+<!--<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<%# @categories.each do |category| %>
+  <tr>
+    <td><%#=h category.name %></td>
+    <td><%#= link_to 'Show', admin_category_path(category) %></td>
+    <td><%#= link_to 'Edit', edit_admin_category_path(category) %></td>
+    <td><%#= link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<%# end %>
+</table>-->
+<%= display_categories(@categories) %>
+<br />
+
+<%= link_to 'New category', new_admin_category_path %>
