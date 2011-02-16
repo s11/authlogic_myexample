@@ -1,4 +1,5 @@
 class Admin::CategoriesController < InheritedResources::Base
+  before_filter :require_user
   ###All the methods are generated automatically
 
   ### override the create method to redirect to index page
