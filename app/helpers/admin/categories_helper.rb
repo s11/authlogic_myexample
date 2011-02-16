@@ -18,7 +18,7 @@ module Admin::CategoriesHelper
     category.children.each { |subcat|
       if subcat.children.size > 0
         ret += '<li>'
-        ret += link_to h(subcat.name), :action => 'edit', :id => subcat
+        ret += link_to h(subcat.name), :action => 'edit', :id => subcat 
         ret += find_all_subcategories(subcat)
         ret += '</li>'
       else
