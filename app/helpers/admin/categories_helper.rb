@@ -1,7 +1,8 @@
 module Admin::CategoriesHelper
   def display_categories(categories)
     ret = "<ul>"
-    for category in categories
+    #for category in categories
+    categories.each do |category|
       if category.parent_id.blank?
         ret += "<li>"
         ret += link_to category.name, :action => 'edit', :id => category
@@ -17,7 +18,7 @@ module Admin::CategoriesHelper
 
   def find_all_subcategories(category)
     ret = '<ul>'
-    category.children.each { |subcat|
+    category.children.each do |subcat|
       if subcat.children.size > 0
         ret += '<li>'
         ret += link_to h(subcat.name), :action => 'edit', :id => subcat
@@ -32,7 +33,7 @@ module Admin::CategoriesHelper
         ret += link_to 'Destroy', admin_category_path(subcat), :confirm => 'Are you sure?', :method => :delete
         ret += '</li>'
       end
-    }
+    end
     ret += '</ul>'
   end
 
